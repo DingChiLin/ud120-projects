@@ -14,7 +14,7 @@ import sys
 from time import time
 sys.path.append("../tools/")
 from email_preprocess import preprocess
-
+import numpy
 
 ### features_train and features_test are the features for the training
 ### and testing datasets, respectively
@@ -26,8 +26,16 @@ features_train, features_test, labels_train, labels_test = preprocess()
 
 #########################################################
 ### your code goes here ###
+from sklearn.naive_bayes import GaussianNB
+clf = GaussianNB()
+clf.fit(features_train, labels_train)
 
-
+from sklearn.metrics import accuracy_score
+pred = clf.predict(features_test)
+accurate_number = numpy.sum((pred == labels_test))
+accuracy = float(accurate_number) / len(pred)
+#accuracy = accuracy_score(labels_test, pred))
+print(clf.score(features_test, labels_test))
 #########################################################
 
 
