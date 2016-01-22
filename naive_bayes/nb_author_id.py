@@ -37,5 +37,3 @@ accuracy = float(accurate_number) / len(pred)
 #accuracy = accuracy_score(labels_test, pred))
 print(clf.score(features_test, labels_test))
 #########################################################
-
-
