@@ -27,21 +27,16 @@ features_train, features_test, labels_train, labels_test = preprocess()
 #########################################################
 
 #speed up!
-features_train = features_train[:len(features_train)/100] 
-labels_train = labels_train[:len(labels_train)/100] 
-
-print(features_train)
-print(labels_train)
+#features_train = features_train[:len(features_train)/100] 
+#labels_train = labels_train[:len(labels_train)/100] 
 
 from sklearn.svm import SVC
 clf = SVC(kernel='rbf', C=10000)
 #clf = SVC(kernel='linear')
 clf.fit(features_train, labels_train)
-#pred = clf.predict(features_test)
+pred = clf.predict(features_test)
 print(clf.score(features_test, labels_test))
+print(len(filter(lambda x:x==1, pred)))
 
 #prettyPicture(clf, features_test, labels_test)
 #plt.show()
-
-
-
