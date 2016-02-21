@@ -55,6 +55,12 @@ features_list = [poi, feature_1, feature_2]
 data = featureFormat(data_dict, features_list )
 poi, finance_features = targetFeatureSplit( data )
 
+### scaling
+#from sklearn.preprocessing import MinMaxScaler
+#scaler = MinMaxScaler()
+#finance_features = scaler.fit_transform(finance_features)
+#scale = scaler.scale_
+#print(200000*scale[0], 1000000*scale[1])
 
 ### in the "clustering with 3 features" part of the mini-project,
 ### you'll want to change this line to 
@@ -68,7 +74,6 @@ plt.show()
 ### for the data and store them to a list called pred
 from sklearn.cluster import KMeans
 pred = KMeans(n_clusters=2).fit_predict(finance_features)
-print(pred)
 
 
 ### rename the "name" parameter when you change the number of features
