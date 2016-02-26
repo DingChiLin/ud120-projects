@@ -42,13 +42,13 @@ def preprocess(words_file = "../tools/word_data.pkl", authors_file="../tools/ema
     features_train, features_test, labels_train, labels_test = cross_validation.train_test_split(word_data, authors, test_size=0.1, random_state=42)
 
 
-
     ### text vectorization--go from strings to lists of numbers
     vectorizer = TfidfVectorizer(sublinear_tf=True, max_df=0.5,
                                  stop_words='english')
     features_train_transformed = vectorizer.fit_transform(features_train)
     features_test_transformed  = vectorizer.transform(features_test)
 
+    #print(len(features_train_transformed.toarray()[0])) #number of features
 
 
     ### feature selection, because text is super high dimensional and 
