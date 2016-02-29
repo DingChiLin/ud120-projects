@@ -38,6 +38,18 @@ labels_train   = labels_train[:150]
 
 
 ### your code goes here
+from sklearn import tree
 
+dt = tree.DecisionTreeClassifier(min_samples_split=40)
+dt.fit(features_train, labels_train)
+print(dt.score(features_train, labels_train))
+print(dt.score(features_test, labels_test))
+print('--------')
+
+for idx, coef in enumerate(dt.feature_importances_):
+    if coef >= 0.2:
+        print(coef)
+        print(idx)
+        print(vectorizer.get_feature_names()[idx])
 
 

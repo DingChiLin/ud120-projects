@@ -62,5 +62,5 @@ print(len(no_total_payment_data) / float(len(enron_data)))
 ###########
 
 #print(pea.poiEmails())
-
+printData(enron_data)
 

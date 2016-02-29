@@ -45,7 +45,6 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
         #temp_counter += 1
         if temp_counter < 200:
             path = os.path.join('..', path[:-1])
-            print path
             email = open(path, "r")
 
             ### use parseOutText to extract the text from the opened email
@@ -53,7 +52,7 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
 
             ### use str.replace() to remove any instances of the words
             ### ["sara", "shackleton", "chris", "germani"]
-            for str in ["sara", "shackleton", "chris", "germani"]:
+            for str in ["sara", "shackleton", "chris", "germani", "sshacklensf", "cgermannsf"]:
                 words = words.replace(str, '')
 
             ### append the text to word_data
@@ -68,7 +67,7 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
 
             email.close()
 
-print "emails processed"
+print("emails processed")
 from_sara.close()
 from_chris.close()
 

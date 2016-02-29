@@ -28,6 +28,7 @@ from sklearn import tree
 
 clf = tree.DecisionTreeClassifier(min_samples_split=40)
 clf.fit(features_train, labels_train)
+print(clf.score(features_train, labels_train))
 print(clf.score(features_test, labels_test))
 
 
