@@ -17,7 +17,7 @@ def poiEmails():
             "kevin.howard@enron.com",
             "kevin.howard@enron.net",
             "kevin.howard@gcm.com",
-            "michael.krautz@enron.com"
+            "michael.krautz@enron.com",
             "scott.yeager@enron.com",
             "syeager@fyi-net.com",
             "scott_yeager@enron.net",
